@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply antialiased;
+  }
+}
+
+input[type='range']::-webkit-slider-runnable-track {
+  @apply bg-gray-200 h-1.5 rounded-full;
+}
+
+input[type='range']::-webkit-slider-thumb {
+  @apply appearance-none w-5 h-5 bg-coffee-700 rounded-full border-4 border-white shadow-md -mt-[7px] cursor-grab active:cursor-grabbing transition-transform active:scale-110;
+}
+
+@keyframes slide-in-toast {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+.animate-in {
+  animation-fill-mode: forwards;
+}
+
+.fade-in {
+  animation: fade-in 0.3s ease-out;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
